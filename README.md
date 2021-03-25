@@ -69,6 +69,7 @@ vim wsgi
 ```
 
 5.在里面配置
+```
 server
 {
     listen 80;
@@ -79,6 +80,7 @@ server
                 proxy_redirect     off;
                 proxy_set_header   Host $host;}
 }
+```
 
 #### 本地搭建
 直接从gitee或者github下载zip文件就可以了
