@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+
+{% block titles %}
+<title>
+    寒门客-网易云音乐随机歌曲
+</title>
+
+{% endblock %}
+
+
+
+{% block app_content %}
+<div class="container">
+<div class="row">
+
+<center>
+    <br>
+    <h4>填写网易云音乐歌单的id，可以随机播放歌曲</h4><br>
+<form action="" method="post" alt="网易云音乐随机歌曲">
+      {{ form.hidden_tag() }}
+    <h3>{{ form.ge_ids.label() }}<br>
+        {{ form.ge_ids(size=50) }}
+    </h3>
+    <h3 style="color:blue">{{ form.submit() }}</h3>
+  </form>
+
+    <br>
+    <br>
+
+{% if codes == 1 %}
+<hr>
+    <h3 class="text-center">音乐名称:</h3>
+    <p>{{ r['data']['name'] }}</p>
+    <audio autoplay alt="网易云音乐随机歌曲" controls="controls" style="display:block; margin:30px auto;">
+      <source src="{{ r['data']['url'] }}" type="audio/mpeg">
+    </audio><br>
+    <h3 class="text-center">歌手名称:</h3>
+    <p>{{ r['data']['artistsname'] }}</p>
+    <h3 class="text-center">封面图片:</h3>
+    <img src="{{ r['data']['picurl'] }}" class="img-responsive center-block img-responsive">
+<br>
+    <hr>
+{% endif %}
+     <h2  class="text-center">作者的抖音二维码:</h2>
+  <img src="{{ url_for('static',filename='images/douyinss.png') }}" alt="网易云音乐随机歌曲" width="50%" height="50%"/>
+    </center>
+</div>
+</div>
+
+{% endblock %}

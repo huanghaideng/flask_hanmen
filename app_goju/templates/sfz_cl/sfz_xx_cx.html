@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% block titles %}
+<title>
+    寒门客-身份证信息查询
+</title>
+{% endblock %}
+
+{% block app_content %}
+
+<div class="container">
+<div class="row">
+    <center>
+        <br>
+    <h3>身份证信息查询(不支持查询百岁老人)</h3><br>
+    <form action="" method="post">
+      {{ form.hidden_tag() }}
+    <h3>{{ form.name.label() }}<br>
+        {{ form.name(size=75) }}
+    </h3>
+    <h3 style="color:blue">{{ form.submit() }}</h3>
+  </form><br>
+    {% if msg %}
+       <table class="table table-bordered">
+      <tr>
+        <td>查身份证地区</td>
+        <td>{{ rs['region'] }}</td>
+      </tr>
+      <tr>
+        <td>出生日期</td>
+        <td>{{ rs['birthday'] }}</td>
+      </tr>
+      <tr>
+        <td>性别</td>
+        <td>{{ rs['gender'] }}</td>
+      </tr>
+	        <tr>
+        <td>年龄</td>
+        <td>{{ rs['age'] }}</td>
+      </tr>
+	        <tr>
+        <td>成年 or未成年</td>
+        <td>{{ rs['adult'] }}</td>
+      </tr>
+	        <tr>
+        <td>生肖</td>
+        <td>{{ rs['zodiac'] }}</td>
+      </tr>
+	  	        <tr>
+        <td>星座</td>
+        <td>{{ rs['constellation'] }}</td>
+      </tr>
+</table>
+<br>
+    {% endif %}
+
+    <h2  class="text-center">作者的抖音二维码:</h2>
+  <img src="{{ url_for('static',filename='images/douyinss.png') }}" alt="身份证信息查询" width="50%" height="50%"/>
+</center>
+</div>
+</div>
+{% endblock %}

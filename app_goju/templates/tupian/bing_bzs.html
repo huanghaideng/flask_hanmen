@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block titles %}
+<title>
+    寒门客-Bing 壁纸获取
+</title>
+{% endblock %}
+
+{% block app_content %}
+
+<div class="container">
+<div class="row">
+
+    <center>
+        <br>
+
+        <h3>获取最近的Bing 壁纸</h3><br>
+        {% for am in ams %}
+
+        <br><h3>标题：</h3>
+        <p>{{ am['copyright'] }}</p>
+        <h3>图片url:</h3>
+        <p>{{ am['url'] }}</p>
+        <img src="{{ am['url'] }}" width="55%" height="55%"/><br>
+
+        {% endfor %}
+        <br><br><button type="button" class="btn btn-primary"><a href="{{ url_for('gojudaquan.bing_bz') }}"><h3>刷新一下</h3></a></button>
+<br>
+
+    <h2  class="text-center">作者的抖音二维码:</h2>
+  <img src="{{ url_for('static',filename='images/douyinss.png') }}" alt="Bing 壁纸获取" width="50%" height="50%"/>
+</center>
+</div>
+</div>
+{% endblock %}

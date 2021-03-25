@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block titles %}
+<title>
+    寒门客-随机语录
+</title>
+{% endblock %}
+
+{% block app_content %}
+
+<div class="container">
+<div class="row">
+    <center>
+        <br>
+
+    {% if codes == 200 %}
+        <h3>随机输出一句经典语录</h3><br>
+        <h2>{{ rs['quotation'] }}</h2><br>
+                <button type="button" class="btn btn-primary">
+        <h4><a href="{{ url_for('gojudaquan.suijiluyan') }}">随机</a></h4>
+    </button>
+<br>
+    {% endif %}
+
+    <h2  class="text-center">作者的抖音二维码:</h2>
+  <img src="{{ url_for('static',filename='images/douyinss.png') }}" alt="随机语录" width="50%" height="50%"/>
+</center>
+</div>
+</div>
+{% endblock %}

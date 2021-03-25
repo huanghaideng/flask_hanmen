@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block titles %}
+<title>
+    寒门客-随机头像
+</title>
+{% endblock %}
+
+{% block app_content %}
+
+<div class="container">
+<div class="row">
+    <center>
+        <br>
+        <h4>随机头像输出</h4>
+    <form action="" method="post">
+      {{ form.hidden_tag() }}
+    <h3>{{ form.imgss.label() }}<br>
+        {{ form.imgss(size=88) }}
+    </h3>
+    <h3 style="color:blue">{{ form.submit() }}</h3>
+  </form><br>
+    {% if codes == 1 %}
+    <h3>图片链接：</h3>
+        <p>{{ imgurl }}</p>
+        <br>
+        <img src="{{ imgurl }}"width="55%" height="55%"/>
+<br>
+    {% endif %}
+
+    <h2  class="text-center">作者的抖音二维码:</h2>
+  <img src="{{ url_for('static',filename='images/douyinss.png') }}" alt="随机头像输出" width="50%" height="50%"/>
+</center>
+</div>
+</div>
+{% endblock %}

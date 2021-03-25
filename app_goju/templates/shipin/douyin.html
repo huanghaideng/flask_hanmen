@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block titles %}
+<title>寒门客-抖音无水印视频解析</title>
+{% endblock %}
+
+
+{% block app_content %}
+<script>
+  .img-responsive {
+  display: block;
+  height: auto;
+  max-width: 60%;
+}
+</script>
+<div class="container">
+<div class="row">
+<center>
+  <form action="" method="post">
+      {{ form.hidden_tag() }}
+    <h2>{{ form.username.label() }}<br>
+        {{ form.username(size=60) }}
+    </h2>
+    <h3 style="color:blue">{{ form.submit() }}</h3>
+  </form>
+
+    <br>
+    <br>
+    {% if codes == 200 %}
+    <h3>标题：</h3>
+	<p class="bg-light text-dark pre-scrollable">{{ douyin_title }}</p>
+	<br>
+	<h3>封面图片url:</h3>
+	<p class="text-primary bg-light text-dark">{{ douyin_cover_image }}</p>
+	<br>
+	<h3>无水印视频链接:</h3>
+  <p class="text-primary pre-scrollable">{{ douyin_video_url }}</p>
+	<p class="text-info">无水印视频链接需要复制粘贴,在浏览器标签中打开才能生效。</p>
+
+    {% endif %}
+    <br>
+  <h2  class="text-center">作者的抖音二维码:</h2>
+  <img src="{{ url_for('static',filename='images/douyinss.png') }}" alt="抖音无水印视频解析" width="50%" height="50%"/>
+    </center>
+</div>
+</div>
+
+{% endblock %}

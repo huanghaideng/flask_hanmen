@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block titles %}
+<title>
+    寒门客-汉服新闻
+</title>
+{% endblock %}
+
+{% block app_content %}
+
+<div class="container">
+<div class="row">
+    <center>
+        <br>
+        <h3>获取有关汉服新闻数据：</h3>
+    {% if codes == 200 %}
+    <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>标题</th>
+        <th>描述</th>
+        <th>文章链接</th>
+		  <th>图片链接</th>
+		  <th>时间</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for hram in am %}
+      <tr>
+        <td>{{ hram['title'] }}</td>
+        <td>{{ hram['source'] }}</td>
+          <td><a href="{{ hram['url'] }}" style="color:blue">文章链接</a></td>
+          <td><a href="{{ hram['picUrl'] }}" style="color:blue">图片链接</a></td>
+		  <td>{{ hram['ctime'] }}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+</table>
+<br>
+    {% endif %}
+
+    <h2  class="text-center">作者的抖音二维码:</h2>
+  <img src="{{ url_for('static',filename='images/douyinss.png') }}" alt="汉服新闻" width="50%" height="50%"/>
+</center>
+</div>
+</div>
+{% endblock %}

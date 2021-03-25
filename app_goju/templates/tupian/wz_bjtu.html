@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block titles %}
+<title>
+    寒门客-网站背景图
+</title>
+{% endblock %}
+
+
+{% block app_content %}
+
+<div class="container">
+<div class="row">
+    <center>
+        <h2>随机输出网站背景图片</h2>
+
+    {% if codes == 200 %}
+        <h3>图片链接：{{ rs['pic_url'] }}</h3><br>
+        <button type="button" class="btn btn-primary">
+        <h4><a href="{{ url_for('gojudaquan.wz_bjtu') }}">下一张图片</a></h4>
+    </button><br><br>
+        <img src="{{ rs['pic_url'] }}" width="40%" height="40%">
+
+    {% endif %}
+
+    <h2  class="text-center">作者的抖音二维码:</h2>
+  <img src="{{ url_for('static',filename='images/douyinss.png') }}" alt="随机输出网站背景图片" width="50%" height="50%"/>
+</center>
+</div>
+</div>
+{% endblock %}

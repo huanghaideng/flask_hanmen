@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block titles %}
+<title>
+    寒门客-微博热搜榜
+</title>
+{% endblock %}
+
+{% block app_content %}
+
+<div class="container">
+<div class="row">
+    <center>
+        <br>
+        <h2 class="font-weight-bold">获取实时微博热搜榜</h2><br>
+    {% if codes == 200 %}
+    <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>热门关键词</th>
+        <th>热门指数</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for hram in am %}
+      <tr>
+        <td>{{ hram['hot_word'] }}</td>
+        <td>{{ hram['hot_word_num'] }}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+</table>
+<br>
+    {% endif %}
+
+    <h2  class="text-center">作者的抖音二维码:</h2>
+  <img src="{{ url_for('static',filename='images/douyinss.png') }}" alt="微博热搜榜" width="50%" height="50%"/>
+</center>
+</div>
+</div>
+{% endblock %}

@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block titles %}
+<title>
+    寒门客-知乎日报
+</title>
+{% endblock %}
+
+{% block app_content %}
+
+<div class="container">
+<div class="row">
+    <center>
+        <br>
+        <h3>获取当日的知乎日报：</h3><br>
+    {% if codes == 200 %}
+
+    <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>标题</th>
+            <th>链接</th>
+              <th>作者</th>
+              <th>图片链接</th>
+              <th>id</th>
+          </tr>
+        </thead>
+        <tbody>
+        {% for hram in am %}
+          <tr>
+            <td>{{ hram['title'] }}</td>
+              <td><a href="{{ hram['url'] }}" style="color:blue">查看</a></td>
+              <td>{{ hram['hint'] }}</td>
+              <td><a style="color:blue" href="{{ hram['images'][0] }}" target="_blank">图片查看</a></td>
+              <td>{{ hram['id'] }}</td>
+          </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+<br>
+    {% endif %}
+
+    <h2  class="text-center">作者的抖音二维码:</h2>
+  <img src="{{ url_for('static',filename='images/douyinss.png') }}" alt="知乎日报" width="50%" height="50%"/>
+</center>
+</div>
+</div>
+{% endblock %}

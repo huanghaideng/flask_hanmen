@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block titles %}
+<title>
+    寒门客-Bilibili 封面获取
+</title>
+{% endblock %}
+
+{% block app_content %}
+
+<div class="container">
+<div class="row">
+    <center>
+        <br>
+        <h4>想必很多人都会遇到这样的一个问题。在B站浏览视频的时候，往往很多人会被各式各样的封面所吸引，从而点了进去，结果发现往往封面的图片在这些视频中一闪而过，甚至有的时候都没有出现。 这个本站就可以获取 b 站的 视频封面，直播封面，专栏封面等</h4>
+    <form action="" method="post">
+      {{ form.hidden_tag() }}
+    <h3>{{ form.bili.label() }}<br>
+        {{ form.bili(size=88) }}
+    </h3>
+    <h3 style="color:blue">{{ form.submit() }}</h3>
+  </form><br>
+    {% if codes == 200 %}
+        <h3>视频标题：</h3>
+        <p>{{ rs['data']['title'] }}</p>
+        <h3>视频详细内容：</h3>
+        <p>{{ rs['data']['description'] }}</p>
+        <h3>视频封面链接：</h3>
+        <p>{{ rs['data']['cover'] }}</p>
+<br>
+    {% endif %}
+
+    <h2  class="text-center">作者的抖音二维码:</h2>
+  <img src="{{ url_for('static',filename='images/douyinss.png') }}" alt="Bilibili 封面获取" width="50%" height="50%"/>
+</center>
+</div>
+</div>
+{% endblock %}

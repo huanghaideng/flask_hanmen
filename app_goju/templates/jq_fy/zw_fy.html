@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block titles %}
+<title>
+    寒门客-中文翻译
+</title>
+{% endblock %}
+
+{% block app_content %}
+
+<div class="container">
+<div class="row">
+    <center>
+        <br>
+        <h4>支持中、英、日、韩等28种语言互译</h4>
+    <form action="" method="post">
+      {{ form.hidden_tag() }}
+    <h3>{{ form.name.label() }}<br>
+        {{ form.name(size=88) }}
+    </h3>
+    <h3 style="color:blue">{{ form.submit() }}</h3>
+  </form><br>
+    {% if codes == 200 %}
+    <h2>原文:</h2>
+        <p>{{ sr }}</p><br>
+        <h2>翻译:</h2>
+        <p>{{ cc }}</p><br><br>
+    {% endif %}
+
+    <h2  class="text-center">作者的抖音二维码:</h2>
+  <img src="{{ url_for('static',filename='images/douyinss.png') }}" alt="中文翻译" width="50%" height="50%"/>
+</center>
+</div>
+</div>
+{% endblock %}

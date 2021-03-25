@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block titles %}
+<title>
+    寒门客-IP域名归属地查询
+</title>
+{% endblock %}
+
+{% block app_content %}
+
+<div class="container">
+<div class="row">
+    <center>
+        <br>
+        <h4>查询IP或者域名归属地</h4>
+    <form action="" method="post">
+      {{ form.hidden_tag() }}
+    <h3>{{ form.ip_cx.label() }}<br>
+        {{ form.ip_cx(size=60) }}
+    </h3>
+    <h3 style="color:blue">{{ form.submit() }}</h3>
+  </form><br>
+    {% if ips %}
+        <table class="table table-bordered">
+      <tr>
+        <td>ip或者域名</td>
+        <td>{{ rs['ip'] }}</td>
+      </tr>
+	        <tr>
+        <td>地址</td>
+        <td>{{ rs['dz'] }}</td>
+      </tr>
+	        <tr>
+        <td>所属运营商</td>
+        <td>{{ rs['wl'] }}</td>
+      </tr>
+</table>
+<br>
+    {% endif %}
+
+    <h2  class="text-center">作者的抖音二维码:</h2>
+  <img src="{{ url_for('static',filename='images/douyinss.png') }}" alt="IP域名归属地查询" width="50%" height="50%"/>
+</center>
+</div>
+</div>
+{% endblock %}

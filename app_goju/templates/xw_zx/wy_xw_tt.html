@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block titles %}
+<title>
+    寒门客-网易新闻头条
+</title>
+{% endblock %}
+
+{% block app_content %}
+
+<div class="container">
+<div class="row">
+    <center>
+        <br>
+        <h3>获取网易新闻头条数据</h3>
+    {% if codes == 200 %}
+    <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>新闻标题</th>
+        <th>新闻摘要</th>
+        <th>新闻id</th>
+		  <th>电脑版新闻链接</th>
+		  <th>手机版新闻链接</th>
+		  <th>新闻封面</th>
+		  <th>新闻来源</th>
+		  <th>新闻时间</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for hram in am %}
+      <tr>
+        <td>{{ hram['title'] }}</td>
+        <td>{{ hram['digest'] }}</td>
+        <td>{{ hram['docid'] }}</td>
+		  <td><a href="{{ hram['pc_url'] }}" style="color:blue">链接</a></td>
+		  <td><a href="{{ hram['m_url'] }}" style="color:blue">链接</a></td>
+		  <td><a style="color:blue" href="{{ hram['imgsrc'] }}">图片链接</a></td>
+		  <td>{{ hram['source'] }}</td>
+		  <td>{{ hram['time'] }}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+
+<br>
+    {% endif %}
+
+    <h2  class="text-center">作者的抖音二维码:</h2>
+  <img src="{{ url_for('static',filename='images/douyinss.png') }}" alt="网易新闻头条" width="50%" height="50%"/>
+</center>
+</div>
+</div>
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+
+{% block titles %}
+<title>
+    寒门客-网易云音乐热门评论
+</title>
+
+{% endblock %}
+
+
+
+{% block app_content %}
+<div class="container">
+<div class="row">
+
+    {% if codes == 200 %}
+    <center>
+        <h3>网易云音乐热门评论</h3>
+
+    <h3>歌名: {{ rs['name'] }}</h3><br>
+
+    <h3>作者：{{ rs['artists_name'] }}</h3><br>
+
+    <audio autoplay alt="网易云音乐热门评论" controls="controls" style="display:block; margin:30px auto;">
+      <source src="{{ rs['music_url'] }}" type="audio/mpeg">
+    </audio><br>
+                <button type="button" class="btn btn-primary">
+        <h4><a href="{{ url_for('gojudaquan.wyy_rp') }}">下一首</a></h4>
+    </button><br><br>
+        <h4>热门评论:<br><br>{{ rs['nickname'] }}：{{ rs['comments'] }}</h4><br>
+        <h3 class="text-center">封面图片:</h3><br>
+    <img src="{{ rs['music_pic'] }}" width="30%" height="30%">
+
+
+{% endif %}
+     <h2  class="text-center">作者的抖音二维码:</h2>
+  <img src="{{ url_for('static',filename='images/douyinss.png') }}" alt="网易云音乐热门评论" width="50%" height="50%"/>
+    </center>
+</div>
+</div>
+
+{% endblock %}

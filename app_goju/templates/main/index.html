@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+
+{% block titles %}
+<title>寒门客-Flask</title>
+{% endblock %}
+
+{% block lunbo %}
+<div class="jumbotron text-center" style="margin-bottom:0">
+  <h1>免责声明</h1>
+    <p>本网站所提供的信息，只供参考之用。</p>
+    <p>本网站是一个开源项目。</p>
+    <p>本网站图片，文字信息之类版权申明，皆来自于互联网，如果侵犯，请及时通知我，本网站将在第一时间及时删除。</p>
+    <p>凡以任何方式登陆本网站或直接、间接使用本网站资料者，视为自愿接受本网站声明的约束。</p>
+
+</div>
+{% endblock %}
+
+{% block app_content %}
+<div class="container">
+
+	<div class="row clearfix">
+        <div class="col-md-12 column">
+            <div class="boxlist">
+                <h3>热门工具</h3>
+            </div>
+               <div class="col-md-3 col-sm-6 column black_box">
+            <div class="box_01">
+            <div class="icon" style="background-color:#f4f4f4;">
+              <center>
+                <img src="{{ url_for('static',filename='images/7.png') }}" alt="网易新闻头条" width="47" height="47">
+              </center>
+        </div>
+        <div class="title_h4"><a href="{{ url_for('gojudaquan.wy_xw_tt') }}" rel="网易新闻头条" target="_blank">网易新闻头条</a></div>
+        <p>获取网易新闻头条数据</p>
+              <div class="btn_sy"><a href="{{ url_for('gojudaquan.wy_xw_tt') }}" rel="网易新闻头条">开始使用</a></div><br>
+          </div>
+      </div>
+
+
+ <div class="col-md-3 col-sm-6 column black_box">
+    <div class="box_01">
+
+        <div class="icon" style="background-color:#f4f4f4;"><center>
+                        <img src="{{ url_for('static',filename='images/18.png') }}" alt="备案信息查询" width="47" height="47">
+                    </center>
+        </div>
+        <div class="title_h4"><a href="{{ url_for('gojudaquan.beian') }}" rel="nofollow" target="_blank">备案信息查询</a></div>
+        <p>根据域名查询ICP备案号及备案信息</p>
+
+        <div class="btn_sy"><a href="{{ url_for('gojudaquan.beian') }}"rel="nofollow">开始使用</a></div><br>
+
+    </div>
+</div>
+
+     <div class="col-md-3 col-sm-6 column black_box">
+            <div class="box_01">
+            <div class="icon" style="background-color:#f4f4f4;">
+              <center>
+                <img src="{{ url_for('static',filename='images/4.png') }}" alt="历史上的今天" width="47" height="47">
+              </center>
+        </div>
+        <div class="title_h4"><a href="{{ url_for('gojudaquan.lzsd_jt') }}" rel="历史上的今天" target="_blank">历史上的今天</a></div>
+        <p>获取历史上同一月同一天发生的事情</p>
+              <div class="btn_sy"><a href="{{ url_for('gojudaquan.lzsd_jt') }}" rel="历史上的今天">开始使用</a></div><br>
+          </div>
+      </div>
+
+     <div class="col-md-3 col-sm-6 column black_box">
+            <div class="box_01">
+            <div class="icon" style="background-color:#f4f4f4;">
+              <center>
+                <img src="{{ url_for('static',filename='images/9.png') }}" alt="中文翻译" width="47" height="47">
+              </center>
+        </div>
+        <div class="title_h4"><a href="{{ url_for('gojudaquan.zw_fy') }}" rel="中文翻译" target="_blank">中文翻译</a></div>
+        <p>支持中、英、日、韩等28种语言互译</p>
+
+              <div class="btn_sy"><a href="{{ url_for('gojudaquan.zw_fy') }}" rel="中文翻译">开始使用</a></div><br>
+          </div>
+      </div>
+
+
+            </div>
+        </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block titles %}
+<title>
+    寒门客-身份证查询
+</title>
+{% endblock %}
+
+{% block app_content %}
+
+<div class="container">
+<div class="row">
+    <center>
+        <br>
+    <h3>根据身份证获取该身份证号码的籍贯，出生年月，性别等信息</h3><br>
+    <form action="" method="post">
+      {{ form.hidden_tag() }}
+    <h3>{{ form.name.label() }}<br>
+        {{ form.name(size=88) }}
+    </h3>
+    <h3 style="color:blue">{{ form.submit() }}</h3>
+  </form><br>
+    {% if ckeck == True %}
+        <table class="table table-bordered">
+      <tr>
+        <td>籍贯</td>
+        <td>{{ rs['addr'] }}</td>
+      </tr>
+      <tr>
+        <td>出生年月</td>
+        <td>{{ rs['date'] }}</td>
+      </tr>
+      <tr>
+        <td>性别</td>
+        <td>{{ rs['sex'] }}</td>
+      </tr>
+</table>
+<br>
+    {% endif %}
+
+    <h2  class="text-center">作者的抖音二维码:</h2>
+  <img src="{{ url_for('static',filename='images/douyinss.png') }}" alt="身份证查询" width="50%" height="50%"/>
+</center>
+</div>
+</div>
+{% endblock %}

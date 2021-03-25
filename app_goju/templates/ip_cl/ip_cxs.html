@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% block titles %}
+<title>
+    寒门客-IP查询
+</title>
+{% endblock %}
+
+{% block app_content %}
+
+<div class="container">
+<div class="row">
+    <center>
+        <br>
+        <h4>根据 ip 查询位置和网络</h4>
+    <form action="" method="post">
+      {{ form.hidden_tag() }}
+    <h3>{{ form.ip_cxs.label() }}<br>
+        {{ form.ip_cxs(size=60) }}
+    </h3>
+    <h3 style="color:blue">{{ form.submit() }}</h3>
+  </form><br>
+    {% if codes == 200 %}
+       <table class="table table-bordered">
+      <tr>
+        <td>绝对位置</td>
+        <td>{{ d['pos'] }}</td>
+      </tr>
+	        <tr>
+        <td>网络运营商</td>
+        <td>{{ d['isp'] }}</td>
+      </tr>
+      <tr>
+        <td>详细介绍</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>国家</td>
+        <td>{{ a['nation'] }}</td>
+      </tr>
+	        <tr>
+        <td>省份</td>
+        <td>{{ a['province'] }}</td>
+      </tr>
+	        <tr>
+        <td>城市</td>
+        <td>{{ a['city'] }}</td>
+      </tr>
+	        <tr>
+        <td>区</td>
+        <td>{{ a['district'] }}</td>
+      </tr>
+	        <tr>
+        <td>IP地址</td>
+        <td>{{ ips }}</td>
+      </tr>
+</table>
+<br>
+    {% endif %}
+
+    <h2  class="text-center">作者的抖音二维码:</h2>
+  <img src="{{ url_for('static',filename='images/douyinss.png') }}" alt="IP查询" width="50%" height="50%"/>
+</center>
+</div>
+</div>
+{% endblock %}

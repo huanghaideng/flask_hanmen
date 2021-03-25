@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block titles %}
+<title>
+    寒门客-历史上的今天
+</title>
+{% endblock %}
+
+{% block app_content %}
+
+<div class="container">
+<div class="row">
+    <center>
+        <br>
+        <h2 class="font-weight-bold">获取历史上同一月同一天发生的事情</h2><br>
+    {% if codes == 200 %}
+    {% for hram in am %}
+        <h3>{{ hram['title'] }}:</h3>
+        <p>{{ hram['desc'] }}</p><br>
+        {% endfor %}
+<br>
+    {% endif %}
+
+    <h2  class="text-center">作者的抖音二维码:</h2>
+  <img src="{{ url_for('static',filename='images/douyinss.png') }}" alt="历史上的今天" width="50%" height="50%"/>
+</center>
+</div>
+</div>
+{% endblock %}

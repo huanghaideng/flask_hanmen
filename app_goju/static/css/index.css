@@ -1,0 +1,230 @@
+<style type="text/css">
+
+html,body{
+
+	background: #fff;
+
+}
+
+body {
+
+  padding-top: 56px;
+
+  overflow-x: hidden;
+
+  overflow-y: auto;
+
+}
+
+.container{
+
+	width: 90%;
+
+	padding: 0;
+
+}
+
+
+
+a:hover{
+
+	text-decoration: none;
+
+}
+
+.top_gj{ background-color:#367FF1; width:100%; height:400px; }
+
+.top_gj h3{ font-family:"微软雅黑"; font-size:40px; color:#FFFFFF;  padding-top:6%;margin: 0px;font-weight:bold;}
+
+.top_gj p{ color:#FFFFFF;}
+
+.top_gj p a{ color:#FFFFFF; font-weight:lighter;}
+
+.top_gj .search_box{ border-radius:50px; background-color:#FFFFFF; width:60%; margin-top:30px; margin-bottom:30px;}
+
+.top_gj .search_box .text_style{ height:48px; border:none; vertical-align:middle;border-radius:50px; width:80%; text-indent:2em; font-size:16px;}
+
+.top_gj .search_box .btnyy{ height:49px; border:none; vertical-align:middle; background-color:#ff6b6b; color:#FFFFFF; cursor:pointer; width:20%; border-radius:50px; font-size:16px; line-height:48px;}
+
+.top_gj .search_box .btnyy:hover{ background-color:#ff7878;}
+
+
+
+.navbar {
+
+ min-height:56px;
+
+ margin-bottom: 0px;
+
+}
+
+@media (min-width:768px) {
+
+ .navbar-nav > li > a {
+
+  padding-top:19.5px;
+
+  padding-bottom:19.5px;
+
+ }
+
+}
+
+.form-control {
+
+ height:37px;
+
+}
+
+
+
+.navbar-brand {
+
+  padding: 8px 15px;
+
+  height:56px;
+
+
+
+}
+
+.navbar-inverse {
+
+ background-color:#3773E6;
+
+ border-color:#080808;
+
+}
+
+.navbar-nav > li > a {
+
+  font-size: 16px;
+
+}
+
+.navbar-inverse .navbar-nav > li > a {
+
+  color: #fff;
+
+}
+
+.navbar-inverse .navbar-nav .dropdown:hover > a {
+
+  color: #ff6b6b;
+
+  background-color: transparent;
+
+}
+
+
+
+.boxlist h3{ text-align:center; font-size:42px; font-weight: normal; margin-top:1em; margin-bottom:1em;}
+
+.black_box .box_01{border:1px solid #e0e0e0; border-radius:25px; position:relative;margin-bottom:1.8em;}
+
+.black_box .box_01 .icon{  width:47px; height:47px; line-height:42px; margin:30px auto; margin-bottom:0px; text-align:center; font-size:32px; background-color:#0099CC; border-radius:10px; color:#FFFFFF;}
+
+.black_box .box_01 .biaozhi{ position:absolute; width:37px; height:20px; line-height:20px; color:#FFFFFF; font-size:14px;font-family:"微软雅黑"; text-align:center;border-radius:2px; right:10px; margin-top:10px;}
+/*.black_box .box_01 .leixing{ left: 10px}*/
+.black_box .box_01 .mianfei{ background-color:#3acd41;}
+.black_box .box_01 .shoufei{ background-color:#3773e6;}
+.black_box .box_01 .gongju{ background-color:#3773e6;}
+.black_box .box_01 .guanggao{ background-color:#ff6b6b;}
+
+.black_box .box_01 .title_h4{ text-align:center; font-size:24px; color:#4f4f4f; font-weight:bold; padding-top:10px; padding-bottom:10px;}
+
+.black_box .box_01 p{ color:#7f7f7f; font-size:16px; width:90%; margin: auto;text-align: justify;height:90px;overflow: hidden;}
+
+/*.black_box .box_01 p:hover{ overflow: inherit;min-height: 90px;}*/
+
+.black_box .box_01 .btn_sy{ width:50%; margin:0 auto; border:1px solid #CCCCCC; height:37px; line-height:37px; font-size:16px; text-align:center; border-radius:50px; margin-top:20px;}
+
+.black_box .box_01 .btn_sy a{ display: block; color:#9e9e9e;}
+
+.black_box .box_01 .btn_sy:hover{ background-color:#4775d8; border:1px solid #4775d8; -webkit-transition: all .25s ease-out; transition: all .25s ease-out; }
+
+.black_box .box_01 .btn_sy a:hover{ color:#FFFFFF;text-decoration:none;}
+
+.black_box .box_01 .renshu{ width:100%; color:#9f9f9f; font-size:14px; height:50px; line-height:50px; border-top:1px solid #eeeeee; margin-top:20px;}
+
+.black_box .box_01 .renshu .liuyan{ float:right;font-family:Arial, Helvetica, sans-serif; color:#939393; font-size:14px; }
+
+.black_box .box_01 .renshu .liuyan img{ width:1em; height:1em; vertical-align:middle; padding-right:5px;}
+
+.black_box .box_01 .renshu .magin{ width:90%; margin:0 auto;}
+
+.black_box .box_01 .renshu span{ background-color:#9f9f9f; color:#FFFFFF; font-family:Arial, Helvetica, sans-serif; font-size:16px; font-weight:bold; border-radius:2px; padding:0px 2px 0px 2px; margin-left:5px; margin-right:5px;}
+
+.black_box .box_01:hover{ box-shadow: 0px 0px 5px 3px #dfdfdf; -webkit-transition: all .25s ease-out; transition: all .25s ease-out;}
+
+.moer_01{ text-align:center; width:20%; margin:2em auto; height:40px;line-height:40px; }
+
+.moer_01 a{ display:block;border-radius:50px; border:1px solid #ff6b6b;}
+
+.moer_01 a:hover{ border:1px solid blue; color:blue; -webkit-transition: all .25s ease-out; transition: all .25s ease-out; border-radius:50px;text-decoration:none;}
+
+
+
+@media all and (max-width: 768px), only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min--moz-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (-o-min-device-pixel-ratio: 2/1) and (max-width: 1024px), only screen and (min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min-resolution: 192dpi) and (max-width: 1024px), only screen and (min-resolution: 2dppx) and (max-width: 1024px) {
+
+	  .top_gj h3{ font-size:20px; padding-top:6%; width:96%;}
+
+  .top_gj .search_box .text_style{ width:60%;}
+
+  .top_gj .search_box .btnyy{ width:40%;}
+
+  .top_gj .search_box{ width:90%;}
+
+  .top_gj p{ width:90%; margin:auto;}
+
+  .top_gj{ height:320px;}
+
+  .moer_01{ width:100%; height:3em; line-height:3em; border-radius:50px; margin-top:0px;}
+
+}
+
+.xwlist{border: 1px solid #e0e0e0;border-radius: 6px; padding:5%;margin-bottom:1.5em;}
+
+.xwlist h3{ color:#333333; text-align:left; font-size:34px; margin-top:0px; margin-bottom:0.4em;font-weight:normal;}
+
+.xwlist h3 span{ float:right; font-size:16px; line-height:44px; }
+
+.xwlist ul li{ list-style:none; line-height:38px;}
+
+.xwlist ul li span{ float:right; background-repeat:no-repeat; background-position:left center; padding-left:26px; color:#999999;}
+
+.xwlist ul li a{ font-size:16px;}
+
+.xwlist ul li a:hover{ color:#ff6b6b; text-decoration:underline;text-decoration:none;}
+
+.xwul{
+
+	padding: 0;
+
+	margin: 0;
+
+}
+
+.footer-inner .links li a:hover {
+
+    text-decoration: none;
+
+}
+
+/*导航栏当前栏目样式*/
+
+.navbar-inverse .navbar-nav > .active > a,
+
+.navbar-inverse .navbar-nav > .active > a:hover,
+
+.navbar-inverse .navbar-nav > .active > a:focus {
+
+ color:#fff;
+
+ background-color:#3773E6;
+
+}
+
+
+
+</style>

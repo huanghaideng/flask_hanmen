@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% block titles %}
+<title>寒门客-备案查询</title>
+{% endblock %}
+
+{% block app_content %}
+<div class="container">
+<div class="row">
+
+<center>
+<form action="" method="post">
+      {{ form.hidden_tag() }}
+    <h2>{{ form.beian.label() }}<br>
+        {{ form.beian(size=60) }}
+    </h2>
+    <h3 style="color:blue">{{ form.submit() }}</h3>
+  </form>
+
+    <br>
+    <br>
+
+{% if z_tai == 200 %}
+
+    <table class="table table-bordered">
+
+      <tr>
+        <td>主办单位名称</td>
+        <td>{{ zhu_mc }}</td>
+      </tr>
+      <tr>
+        <td>主办单位性质</td>
+        <td>{{ zhu_xz }}</td>
+      </tr>
+	       <tr>
+        <td>备案许可证号</td>
+        <td>{{ beian_hao }}</td>
+      </tr>
+	  	       <tr>
+        <td>网站备案名称</td>
+        <td>{{ beian_name }}</td>
+      </tr>
+	  	       <tr>
+        <td>网站首页网址</td>
+        <td>{{ wz_sy }}</td>
+      </tr>
+	  	  	       <tr>
+        <td>备案审核时间</td>
+        <td>{{ beian_sj }}</td>
+      </tr>
+	  	  	       <tr>
+        <td>备案审核时间</td>
+        <td>{{ zuixin_sh }}</td>
+      </tr>
+
+</table>
+
+<br>
+    <hr>
+{% endif %}
+      <h2  class="text-center">作者的抖音二维码:</h2>
+  <img src="{{ url_for('static',filename='images/douyinss.png') }}" alt="备案查询" width="50%" height="50%"/>
+    </center>
+</div>
+</div>
+{% endblock %}
